@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b2a6d3b2150f424a8ae325e0933f285, type: 3}
+  m_Name: Level6
+  m_EditorClassIdentifier: 
+  text: "Tenemos un pila con un varias hojas en la impresora. Para de imprimir 40
+    hojas de un trabajo tuve que agregar 3 veces 5 hojas. Despu\xE9s de imprimir
+    todo me qued\xE9 sin hojas. \xBFCu\xE1ntas hojas ten\xEDa desde el inicio?"
+  successNextQuestion: {fileID: 11400000, guid: ed08d027e1ca14b61bd47a866c15aa47,
+    type: 2}
+  errorNextQuestion: {fileID: 11400000, guid: 42bfbb4fe66d748a89e867a10e5e76cf, type: 2}
+  answers:
+  - 25
+  - 35
+  - 55
+  correctAnswerIndex: 0
+  points: 16
