@@ -25,33 +25,41 @@ public class MathsGame : MonoBehaviour
             this.currentQuestion = initialQuestion;
             this.showQuestion();
             this.points = 0;
-        } else
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            this.processAnswer();
+            this.processAnswer(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            this.processAnswer(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            this.processAnswer(3);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            this.processAnswer(4);
         }
     }
 
-    void processAnswer()
+    void processAnswer(int answer)
     {
-        var input = this.detectInput();
-        if (this.isNumber(input))
+        if(this.currentQuestion.isPosibleAnswer(answer))
         {
-            int answer = Int32.Parse(input);
-            if(this.currentQuestion.isPosibleAnswer(answer))
+            if (currentQuestion.isCorrectAnswer(answer))
             {
-                if (currentQuestion.isCorrectAnswer(answer))
-                {
-                    this.points += currentQuestion.getPoints();
-                    Debug.Log(this.points);
-                }
-                if(currentQuestion.isLastQuestion())
-                {
-                    this.statementTextField.text = "El juego ha terminado. Tienes " + this.points + " puntos.\n\nPulsa Enter para comenzar de nuevo el juego";
-                } else
-                {
-                    this.currentQuestion = this.currentQuestion.getNextQuestion(answer);
-                    this.showQuestion();
-                }
+                this.points += currentQuestion.getPoints();
+                Debug.Log(this.points);
+            }
+            if(currentQuestion.isLastQuestion())
+            {
+                this.statementTextField.text = "El juego ha terminado. Tienes " + this.points + " puntos.\n\nPulsa Enter para comenzar de nuevo el juego";
+            } else
+            {
+                this.currentQuestion = this.currentQuestion.getNextQuestion(answer);
+                this.showQuestion();
             }
         }
     }
@@ -60,21 +68,5 @@ public class MathsGame : MonoBehaviour
     {
         this.statementTextField.text = this.currentQuestion.getText();
     }
-
-    private string detectInput()
-    {
-        if (Input.inputString != "")
-        {
-            return Input.inputString;
-        }
-        return "";
-    }
-
-    private Boolean isNumber(string input)
-    {
-        int number;
-        return Int32.TryParse(input, out number);
-    }
-
 }
 
