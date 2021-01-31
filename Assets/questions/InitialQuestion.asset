@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: "Un pastor ten\xEDa 16 ovejas. Para poder casarse con una chica tuvo que
     gastar la mitad de esas ovejas. Al a\xF1o siguente de cada dos ovejas que le
-    quedaron en el reba\xF1o naci\xF3 una. \xBFCu\xE1ntas ovejas tuvo despu\xE9s
+    quedaron en el reba\xF1o naci\xF3 una m\xE1s. \xBFCu\xE1ntas ovejas tuvo despu\xE9s
     de ese primer a\xF1o? "
   successNextQuestion: {fileID: 11400000, guid: 0ba04ce4e543f46a884243fecfae9fc2,
     type: 2}
@@ -24,4 +24,4 @@ MonoBehaviour:
   - 8
   - 12
   correctAnswerIndex: 2
-  points: 0
+  points: 15
